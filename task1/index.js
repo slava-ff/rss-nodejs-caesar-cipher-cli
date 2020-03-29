@@ -19,3 +19,15 @@ else streamDest = fs.createWriteStream(programOptions.output, { flags: 'a' });
 if (programOptions.action === 'decode') programOptions.shift = -programOptions.shift;
 
 streamSrc.pipe(cCipher).pipe(streamDest);
+
+
+process.on('uncaughtException', error => {
+    if (error.errno === -4058) {
+        console.error('There is no file with this path');
+        process.exit(1);
+    }
+    else {
+        console.error(error);
+        process.exit(1);
+    }
+  })
