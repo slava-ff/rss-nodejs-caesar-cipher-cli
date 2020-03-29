@@ -1,5 +1,5 @@
 #### How to run Caesar cipher CLI tool 
-- use command in command line `node .TASK1/src/commander.js`
+- use command in command line `node task1`
 - use flags:
 	- `-s <num>` or `--shift <num>'` to set amount of chars to shift. This is  required option.
 	- `-a <action>` or `--action <action>` to set one of actions: `encode` or `decode`. This is  required option.
