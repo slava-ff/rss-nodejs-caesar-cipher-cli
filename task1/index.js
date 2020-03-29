@@ -16,4 +16,6 @@ else streamSrc = fs.createReadStream(programOptions.input);
 if (!programOptions.output) streamDest = process.stdout;
 else streamDest = fs.createWriteStream(programOptions.output, { flags: 'a' });
 
+if (programOptions.action === 'decode') programOptions.shift = -programOptions.shift;
+
 streamSrc.pipe(cCipher).pipe(streamDest);
